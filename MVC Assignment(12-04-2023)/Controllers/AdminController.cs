@@ -168,6 +168,8 @@ namespace MVC_Assignment_12_04_2023_.Controllers
 		public IActionResult AppliedView(int jobId)
 		{
 			Connection();
+			Console.WriteLine("hher");
+			Console.WriteLine(jobId);
 
 			// A stored procedure which takes jobId as input and returns all the records using foreign key in AppliedJobs Table
 			string getAppliedJobs = "GetJobApplicationDetails";

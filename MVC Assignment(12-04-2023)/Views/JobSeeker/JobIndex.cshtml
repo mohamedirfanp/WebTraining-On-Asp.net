@@ -100,16 +100,17 @@
                     <td>@job.JobDescription</td>
                     <td>@job.CompanyName</td>
                     <td>@job.Salary</td>
-                        @if (!@ViewBag.appliedJob  && !@ViewBag.appliedJob.Contains(job.JobId))
-                        {
+                        
                         <td>
-                            <a href="/JobSeeker/ApplyJob?jobId=@job.JobId&email=@UserManager.GetUserName(User)"><button class="btn btn-outline-primary">Apply</button></a>
-                        </td
+                        @if (@ViewBag.appliedJob.Contains(job.JobId))
+                        {
+                            <button class="btn btn-outline-primary" disabled>Apply</button>
                         }
                         else
                         {
-                            <td><button class="btn btn-outline-primary" disabled>Apply</button></td>
+                            <a href="/JobSeeker/ApplyJob?jobId=@job.JobId&email=@UserManager.GetUserName(User)"><button class="btn btn-outline-primary">Apply</button></a>
                         }
+                        </td>
                 </tr>
             }
         </tbody>

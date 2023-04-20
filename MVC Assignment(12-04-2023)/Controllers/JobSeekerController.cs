@@ -8,7 +8,7 @@ namespace MVC_Assignment_12_04_2023_.Controllers
     public class JobSeekerController : Controller
     {
         private readonly IConfiguration _configuration;
-        public List<int> _jobIdList = new List<int>();
+        public static List<int> _jobIdList = new List<int>();
 
         public JobSeekerController(IConfiguration configuration)
         {
@@ -58,6 +58,10 @@ namespace MVC_Assignment_12_04_2023_.Controllers
                    
                     reader.Close();
                 }
+                foreach(var jobid in _jobIdList)
+                {
+                    Console.WriteLine(jobid);
+                }
             }
             catch (Exception ex)
             {
@@ -73,6 +77,8 @@ namespace MVC_Assignment_12_04_2023_.Controllers
         public IActionResult ApplyJob(int JobId,string email)
         {
             _jobIdList.Add(JobId);
+            Console.WriteLine("here");
+
             Connection();
 
             string addAppliedJobs = $"INSERT INTO AppliedJobs VALUES('{email}',{JobId})";
