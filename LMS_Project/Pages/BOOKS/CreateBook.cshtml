@@ -1,0 +1,110 @@
+﻿@page
+@model LMS_Project.Pages.BOOKS.CreateBookModel
+@{
+}
+
+<h2>Create a book</h2>
+
+@*
+    Manual way of destroying the message.
+    @if( Model.errorMessage.Length > 0 ){
+    <div id="error-div">
+        <br><div  class="alert-warning"> @Model.errorMessage </div>  <br />
+        <button type="button" class="btn-close" data-dismiss="alert"
+                onclick="
+    const element = document.getElementById('error-div');
+                element.remove();
+"></button>
+    </div>
+}
+
+@if ( Model.successMessage.Length > 0 )
+{
+    <div id="success-div">
+        <br><div class="alert-success"> @Model.successMessage </div>  <br />
+        <button type="button" class="btn-close"
+                onclick="
+    const element = document.getElementById('success-div');
+                element.remove();
+"></button>
+    </div>
+}
+*@
+
+
+
+@if(Model.errorMessage.Length > 0 && Model.errorMessage != "")
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <p>@Model.errorMessage</p>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+        </button>
+    </div>
+}
+@if (Model.successMessage.Length > 0 && Model.successMessage != "")
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <p>@Model.successMessage</p>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+        </button>
+    </div>
+
+}
+
+<form method="post">
+    <div class="row-cols-md-3">
+        <label class="col-sm-4 col-form-label">Book ID<span style="color: red;">*</span></label> 
+        <div class="col-sm-2">
+            <input type="text" class="form-control" name="id" required/>
+        </div>
+    </div>
+    <div class="row-cols-md-3">
+        <label class="col-sm-1 col-form-label">Book Title<span style="color: red;">*</span></label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="title" required />
+        </div>
+    </div>
+    <div class="row-cols-md-3">
+        <label class="col-sm-1 col-form-label">Category<span style="color: red;">*</span></label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="category" required />
+        </div>
+    </div>
+    <div class="row-cols-md-3">
+        <label class="col-sm-1 col-form-label">Author<span style="color: red;">*</span></label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="author" required />
+        </div>
+    </div>
+    <div class="row-cols-md-3">
+        <label class="col-sm-1 col-form-label">Publication<span style="color: red;">*</span></label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="publication" required />
+        </div>
+    </div>
+    <div class="row-cols-md-3">
+        <label class="col-sm-1 col-form-label">Publish Date<span style="color: red;">*</span></label>
+        <div class="col-sm-4">
+            <input type="date" class="form-control" name="publish_date" required />
+        </div>
+    </div>
+    <div class="row-cols-md-3">
+        <label class="col-sm-1 col-form-label">Book Edition<span style="color: red;">*</span></label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="edition" required />
+        </div>
+    </div>
+    <div class="row-cols-md-3">
+        <label class="col-sm-1 col-form-label">Price<span style="color: red;">*</span></label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="price" required />
+        </div>
+    </div>
+    <br />
+    <div>
+    <button type="submit" class="btn btn-outline-dark">Submit</button>
+     <a href="/" class="btn btn-outline-danger">Cancel</a>
+    </div>
+
+</form>
+

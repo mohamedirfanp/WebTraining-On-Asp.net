@@ -1,0 +1,65 @@
+﻿@page
+@model LMS_Project.Pages.BOOKS.UpdateBookModel
+@{
+}
+
+
+<h1>Update Book</h1>
+
+<form method="post">
+    <div class="row-cols-md-3">
+        <label class="col-sm-4 col-form-label">Book ID<span style="color: red;">*</span></label>
+        <div class="col-sm-2">
+            <input type="text" class="form-control" name="id" disabled value="@Model.book.Id"/>
+        </div>
+    </div>
+    <div class="row-cols-md-3">
+        <label class="col-sm-1 col-form-label">Book Title<span style="color: red;">*</span></label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="title" required value="@Model.book.Book_Title" />
+        </div>
+    </div>
+    <div class="row-cols-md-3">
+        <label class="col-sm-1 col-form-label">Category<span style="color: red;">*</span></label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="category" required value="@Model.book.Category" />
+        </div>
+    </div>
+    <div class="row-cols-md-3">
+        <label class="col-sm-1 col-form-label">Author<span style="color: red;">*</span></label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="author" required value="@Model.book.Author" />
+        </div>
+    </div>
+    <div class="row-cols-md-3">
+        <label class="col-sm-1 col-form-label">Publication<span style="color: red;">*</span></label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="publication" required value="@Model.book.Publication" />
+        </div>
+    </div>
+    <div class="row-cols-md-3">
+        <label class="col-sm-1 col-form-label">Publish Date<span style="color: red;">*</span></label>
+        <div class="col-sm-4">
+            <input type="date" class="form-control" name="publish_date" required value="@Model.book.Publish_Date.Date.ToString("yyyy-MM-dd")" />
+        </div>
+    </div>
+    <div class="row-cols-md-3">
+        <label class="col-sm-1 col-form-label">Book Edition<span style="color: red;">*</span></label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="edition" required value="@Model.book.Book_Edition" />
+        </div>
+    </div>
+    <div class="row-cols-md-3">
+        <label class="col-sm-1 col-form-label">Price<span style="color: red;">*</span></label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="price" required value="@Model.book.Price" />
+        </div>
+    </div>
+    <br />
+    <div>
+        <button type="submit" class="btn btn-outline-dark">Save</button>
+        <a href="/" class="btn btn-outline-danger">Cancel</a>
+    </div>
+
+</form>
+
